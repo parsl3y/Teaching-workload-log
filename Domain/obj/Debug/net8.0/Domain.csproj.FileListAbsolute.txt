@@ -1,0 +1,13 @@
+D:\Programming\Rider\Teaching workload log\Domain\bin\Debug\net8.0\Domain.deps.json
+D:\Programming\Rider\Teaching workload log\Domain\bin\Debug\net8.0\Domain.dll
+D:\Programming\Rider\Teaching workload log\Domain\bin\Debug\net8.0\Domain.pdb
+D:\Programming\Rider\Teaching workload log\Domain\obj\Debug\net8.0\Domain.csproj.AssemblyReference.cache
+D:\Programming\Rider\Teaching workload log\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\Rider\Teaching workload log\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+D:\Programming\Rider\Teaching workload log\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+D:\Programming\Rider\Teaching workload log\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+D:\Programming\Rider\Teaching workload log\Domain\obj\Debug\net8.0\Domain.sourcelink.json
+D:\Programming\Rider\Teaching workload log\Domain\obj\Debug\net8.0\Domain.dll
+D:\Programming\Rider\Teaching workload log\Domain\obj\Debug\net8.0\refint\Domain.dll
+D:\Programming\Rider\Teaching workload log\Domain\obj\Debug\net8.0\Domain.pdb
+D:\Programming\Rider\Teaching workload log\Domain\obj\Debug\net8.0\ref\Domain.dll

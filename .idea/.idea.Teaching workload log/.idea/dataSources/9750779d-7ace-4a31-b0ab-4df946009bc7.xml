@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@localhost">
+  <database-model serializer="dbm" dbms="MONGO" family-id="MONGO" format-version="4.53">
+    <root id="1">
+      <ServerVersion>8.0.4</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="MyDb">
+      <LastIntrospectionLocalTimestamp>2025-02-07.20:44:11</LastIntrospectionLocalTimestamp>
+    </schema>
+    <schema id="3" parent="1" name="admin"/>
+    <schema id="4" parent="1" name="config"/>
+    <schema id="5" parent="1" name="local"/>
+    <table id="6" parent="2" name="classes"/>
+    <column id="7" parent="6" name="_id">
+      <Position>1</Position>
+      <StoredType>ObjectId|12s</StoredType>
+    </column>
+    <column id="8" parent="6" name="class_date">
+      <Position>2</Position>
+      <StoredType>ISODate|91s</StoredType>
+    </column>
+    <column id="9" parent="6" name="class_name">
+      <Position>3</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="10" parent="6" name="class_number_today">
+      <Position>4</Position>
+      <StoredType>Int32|4s</StoredType>
+    </column>
+    <column id="11" parent="6" name="class_room">
+      <Position>5</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="12" parent="6" name="total_class_number">
+      <Position>6</Position>
+      <StoredType>Int32|4s</StoredType>
+    </column>
+  </database-model>
+</dataSource>

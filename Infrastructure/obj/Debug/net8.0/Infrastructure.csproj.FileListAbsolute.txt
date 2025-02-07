@@ -1,0 +1,13 @@
+D:\Programming\Rider\Teaching workload log\Infrastructure\bin\Debug\net8.0\Infrastructure.deps.json
+D:\Programming\Rider\Teaching workload log\Infrastructure\bin\Debug\net8.0\Infrastructure.dll
+D:\Programming\Rider\Teaching workload log\Infrastructure\bin\Debug\net8.0\Infrastructure.pdb
+D:\Programming\Rider\Teaching workload log\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.AssemblyReference.cache
+D:\Programming\Rider\Teaching workload log\Infrastructure\obj\Debug\net8.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\Rider\Teaching workload log\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfoInputs.cache
+D:\Programming\Rider\Teaching workload log\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfo.cs
+D:\Programming\Rider\Teaching workload log\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.CoreCompileInputs.cache
+D:\Programming\Rider\Teaching workload log\Infrastructure\obj\Debug\net8.0\Infrastructure.sourcelink.json
+D:\Programming\Rider\Teaching workload log\Infrastructure\obj\Debug\net8.0\Infrastructure.dll
+D:\Programming\Rider\Teaching workload log\Infrastructure\obj\Debug\net8.0\refint\Infrastructure.dll
+D:\Programming\Rider\Teaching workload log\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
+D:\Programming\Rider\Teaching workload log\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll
