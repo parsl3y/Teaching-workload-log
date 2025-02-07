@@ -51,3 +51,7 @@ D:\Programming\Rider\Teaching workload log\API\obj\Debug\net8.0\refint\API.dll
 D:\Programming\Rider\Teaching workload log\API\obj\Debug\net8.0\API.pdb
 D:\Programming\Rider\Teaching workload log\API\obj\Debug\net8.0\API.genruntimeconfig.cache
 D:\Programming\Rider\Teaching workload log\API\obj\Debug\net8.0\ref\API.dll
+D:\Programming\Rider\Teaching workload log\API\bin\Debug\net8.0\Application.dll
+D:\Programming\Rider\Teaching workload log\API\bin\Debug\net8.0\Application.pdb
+D:\Programming\Rider\Teaching workload log\API\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Programming\Rider\Teaching workload log\API\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll

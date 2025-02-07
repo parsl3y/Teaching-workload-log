@@ -11,3 +11,8 @@ D:\Programming\Rider\Teaching workload log\Infrastructure\obj\Debug\net8.0\Infra
 D:\Programming\Rider\Teaching workload log\Infrastructure\obj\Debug\net8.0\refint\Infrastructure.dll
 D:\Programming\Rider\Teaching workload log\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
 D:\Programming\Rider\Teaching workload log\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll
+D:\Programming\Rider\Teaching workload log\Infrastructure\bin\Debug\net8.0\Application.dll
+D:\Programming\Rider\Teaching workload log\Infrastructure\bin\Debug\net8.0\Domain.dll
+D:\Programming\Rider\Teaching workload log\Infrastructure\bin\Debug\net8.0\Application.pdb
+D:\Programming\Rider\Teaching workload log\Infrastructure\bin\Debug\net8.0\Domain.pdb
+D:\Programming\Rider\Teaching workload log\Infrastructure\obj\Debug\net8.0\Infrastr.15EFFBFE.Up2Date

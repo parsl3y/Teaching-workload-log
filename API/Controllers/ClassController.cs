@@ -1,69 +1,80 @@
 using Domain.Entity;
-using Infrastructure;
 using Microsoft.AspNetCore.Mvc;
-using MongoDB.Driver;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Application.Common.Interfaces.Queries;
+using Application.Common.Interfaces.Repositories;
 
-namespace API.Controllers;
-
-[Route("api/[controller]")]
-[ApiController]
-public class ClassController : Controller
+namespace API.Controllers
 {
-    private readonly IMongoCollection<Classes>? _classes;
-
-    public ClassController(MongoDbService mongoDbService)
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ClassController : ControllerBase
     {
-        _classes = mongoDbService.Database?.GetCollection<Classes>("classes");
-    }
+        private readonly IClassRepository _classRepository;
+        private readonly IClassQuery _classQuery;
 
-    [HttpGet]
-    public async Task<IEnumerable<Classes>> Get()
-    {
-        return await _classes.Find(FilterDefinition<Classes>.Empty).ToListAsync();
-    }
 
-    [HttpGet("{id}")]
-    public async Task<Classes> GetById(string id)
-    {
-        var filter = Builders<Classes>.Filter.Eq(x => x.Id, id);
-        var classes = await _classes.Find(filter).FirstOrDefaultAsync();
-    
-        if (classes == null)
+        public ClassController(IClassRepository classRepository, IClassQuery classQuery)
         {
-            throw new KeyNotFoundException($" {id} not found.");
+            _classRepository = classRepository;
+            _classQuery = classQuery;
         }
-    
-        return classes;
-    }
 
-    [HttpPost]
-    public async Task<ActionResult<Classes>> Post(Classes classes)
-    {
-        await _classes.InsertOneAsync(classes);
-        return CreatedAtAction(nameof(GetById), new { id = classes.Id }, classes);
-    }
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Classes>>> Get()
+        {
+            var classes = await _classQuery.GetAllAsync();
+            return Ok(classes);
+        }
 
-    [HttpPut("{id}")]
-    public async Task<ActionResult<Classes>> Put(string id, Classes classes)
-    {
-        var filter = Builders<Classes>.Filter.Eq(x => x.Id, id);
-        /*var update = Builders<Classes>.Update
-            .Set(x => x.ClassName, classes.ClassName)
-            .Set(x => x.TotalClassNumber, classes.TotalClassNumber)
-            .Set(x => x.ClassNumberToday, classes.ClassNumberToday)
-            .Set(x => x.ClassRoom, classes.ClassRoom)
-            .Set(x => x.ClassDate, classes.ClassDate);
-        await _classes.UpdateOneAsync(filter, update);*/
-        
-        await _classes.ReplaceOneAsync(filter, classes);
-        return Ok();
-    }
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Classes>> GetById(string id)
+        {
+            try
+            {
+                var classes = await _classQuery.GetByIdAsync(id);
+                return Ok(classes);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
 
-    [HttpDelete("{id}")]
-    public async Task<ActionResult<Classes>> Delete(string id)
-    {
-        var filter = Builders<Classes>.Filter.Eq(x => x.Id, id);
-        await _classes.DeleteOneAsync(filter);
-        return Ok();
+        [HttpPost]
+        public async Task<ActionResult<Classes>> Post(Classes classes)
+        {
+            await _classRepository.CreateAsync(classes);
+            return CreatedAtAction(nameof(GetById), new { id = classes.Id }, classes);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult> Put(string id, Classes classes)
+        {
+            try
+            {
+                await _classRepository.UpdateAsync(id, classes);
+                return Ok();
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(string id)
+        {
+            try
+            {
+                await _classRepository.DeleteAsync(id);
+                return Ok();
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
     }
 }
