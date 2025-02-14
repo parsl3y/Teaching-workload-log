@@ -1,12 +1,28 @@
 {
   "version": 2,
-  "dgSpecHash": "v6WqzH8K9cI=",
+  "dgSpecHash": "9Cx4RsDiF6U=",
   "success": true,
   "projectFilePath": "D:\\Programming\\Rider\\Teaching workload log\\Application\\Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Burch\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
+    "C:\\Users\\Burch\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.11.0\\fluentvalidation.dependencyinjectionextensions.11.11.0.nupkg.sha512",
+    "C:\\Users\\Burch\\.nuget\\packages\\mediatr\\12.4.1\\mediatr.12.4.1.nupkg.sha512",
+    "C:\\Users\\Burch\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\Burch\\.nuget\\packages\\microsoft.aspnetcore.http\\2.3.0\\microsoft.aspnetcore.http.2.3.0.nupkg.sha512",
+    "C:\\Users\\Burch\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.3.0\\microsoft.aspnetcore.http.abstractions.2.3.0.nupkg.sha512",
+    "C:\\Users\\Burch\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.3.0\\microsoft.aspnetcore.http.features.2.3.0.nupkg.sha512",
+    "C:\\Users\\Burch\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.3.0\\microsoft.aspnetcore.webutilities.2.3.0.nupkg.sha512",
+    "C:\\Users\\Burch\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.1\\microsoft.extensions.dependencyinjection.abstractions.9.0.1.nupkg.sha512",
+    "C:\\Users\\Burch\\.nuget\\packages\\microsoft.extensions.objectpool\\8.0.11\\microsoft.extensions.objectpool.8.0.11.nupkg.sha512",
+    "C:\\Users\\Burch\\.nuget\\packages\\microsoft.extensions.options\\8.0.2\\microsoft.extensions.options.8.0.2.nupkg.sha512",
+    "C:\\Users\\Burch\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\Burch\\.nuget\\packages\\microsoft.net.http.headers\\2.3.0\\microsoft.net.http.headers.2.3.0.nupkg.sha512",
     "C:\\Users\\Burch\\.nuget\\packages\\mongodb.bson\\3.1.0\\mongodb.bson.3.1.0.nupkg.sha512",
+    "C:\\Users\\Burch\\.nuget\\packages\\optional\\4.0.0\\optional.4.0.0.nupkg.sha512",
+    "C:\\Users\\Burch\\.nuget\\packages\\system.buffers\\4.6.0\\system.buffers.4.6.0.nupkg.sha512",
     "C:\\Users\\Burch\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
-    "C:\\Users\\Burch\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+    "C:\\Users\\Burch\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
+    "C:\\Users\\Burch\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512"
   ],
   "logs": []
 }

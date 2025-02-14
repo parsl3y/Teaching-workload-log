@@ -1,22 +1,35 @@
+using Application.Common.Serrealizer;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
+using MongoDB.Bson.Serialization;
+using MongoDB.Bson.Serialization.Serializers;
+using Domain.Entity;
 
-namespace Infrastructure;
-
-public class MongoDbService
+namespace Infrastructure
 {
-    private readonly IConfiguration _configuration;
-    private readonly IMongoDatabase _database;
-
-    public MongoDbService(IConfiguration configuration)
+    public class MongoDbService
     {
-        _configuration = configuration;
+        private readonly IConfiguration _configuration;
+        private readonly IMongoDatabase _database;
+
+        public MongoDbService(IConfiguration configuration)
+        {
+            _configuration = configuration;
+            
+            var connectionString = _configuration.GetConnectionString("DbConnection");
+            var mongoUrl = MongoUrl.Create(connectionString);
+            var mongoClient = new MongoClient(mongoUrl);
+            _database = mongoClient.GetDatabase(mongoUrl.DatabaseName);
+
+            RegisterSerializers();
+        }
         
-        var connectionString = _configuration.GetConnectionString("DbConnection");
-        var mongoUrl = MongoUrl.Create(connectionString);
-        var mongoClient = new MongoClient(mongoUrl);
-        _database = mongoClient.GetDatabase(mongoUrl.DatabaseName);
+        public IMongoDatabase Database => _database;
+
+        private void RegisterSerializers()
+        {
+            BsonSerializer.RegisterSerializer(new ClassIdSerializer());
+            BsonSerializer.RegisterSerializer(new UserIdSerializer());
+        }
     }
-    
-    public IMongoDatabase Database => _database;
 }

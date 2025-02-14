@@ -55,3 +55,17 @@ D:\Programming\Rider\Teaching workload log\API\bin\Debug\net8.0\Application.dll
 D:\Programming\Rider\Teaching workload log\API\bin\Debug\net8.0\Application.pdb
 D:\Programming\Rider\Teaching workload log\API\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
 D:\Programming\Rider\Teaching workload log\API\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Programming\Rider\Teaching workload log\API\bin\Debug\net8.0\FluentValidation.dll
+D:\Programming\Rider\Teaching workload log\API\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\Programming\Rider\Teaching workload log\API\bin\Debug\net8.0\MediatR.dll
+D:\Programming\Rider\Teaching workload log\API\bin\Debug\net8.0\MediatR.Contracts.dll
+D:\Programming\Rider\Teaching workload log\API\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+D:\Programming\Rider\Teaching workload log\API\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\Programming\Rider\Teaching workload log\API\bin\Debug\net8.0\Optional.dll
+D:\Programming\Rider\Teaching workload log\API\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+D:\Programming\Rider\Teaching workload log\API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+D:\Programming\Rider\Teaching workload log\API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Programming\Rider\Teaching workload log\API\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Programming\Rider\Teaching workload log\API\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+D:\Programming\Rider\Teaching workload log\API\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Programming\Rider\Teaching workload log\API\bin\Debug\net8.0\MongoDB.EntityFrameworkCore.dll

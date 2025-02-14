@@ -5,7 +5,7 @@
       <ServerVersion>8.0.4</ServerVersion>
     </root>
     <schema id="2" parent="1" name="MyDb">
-      <LastIntrospectionLocalTimestamp>2025-02-07.20:44:11</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-02-09.13:31:03</LastIntrospectionLocalTimestamp>
     </schema>
     <schema id="3" parent="1" name="admin"/>
     <schema id="4" parent="1" name="config"/>

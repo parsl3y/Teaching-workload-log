@@ -1,4 +1,4 @@
-using Domain.Entity;
+/*using Domain.Entity;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -13,8 +13,7 @@ namespace API.Controllers
     {
         private readonly IClassRepository _classRepository;
         private readonly IClassQuery _classQuery;
-
-
+        
         public ClassController(IClassRepository classRepository, IClassQuery classQuery)
         {
             _classRepository = classRepository;
@@ -22,18 +21,18 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Classes>>> Get()
+        public async Task<ActionResult<IEnumerable<Class>>> GetAll(CancellationToken cancellationToken)
         {
-            var classes = await _classQuery.GetAllAsync();
+            var classes = await _classQuery.GetAll(cancellationToken);
             return Ok(classes);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Classes>> GetById(string id)
+        public async Task<ActionResult<Class>> GetById(ClassId id,CancellationToken cancellationToken)
         {
             try
             {
-                var classes = await _classQuery.GetByIdAsync(id);
+                var classes = await _classQuery.GetById(id,cancellationToken);
                 return Ok(classes);
             }
             catch (KeyNotFoundException ex)
@@ -41,20 +40,20 @@ namespace API.Controllers
                 return NotFound(ex.Message);
             }
         }
-
+    
         [HttpPost]
-        public async Task<ActionResult<Classes>> Post(Classes classes)
+        public async Task<ActionResult<Class>> Post(Class @class, CancellationToken cancellationToken)
         {
-            await _classRepository.CreateAsync(classes);
-            return CreatedAtAction(nameof(GetById), new { id = classes.Id }, classes);
+            await _classRepository.Create(@class, cancellationToken);
+            return CreatedAtAction(nameof(GetById), new { id = @class.Id }, @class);
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> Put(string id, Classes classes)
+        public async Task<ActionResult> Update([FromRoute] ClassId id, Class @class)
         {
             try
             {
-                await _classRepository.UpdateAsync(id, classes);
+                await _classRepository.Update(id, @class);
                 return Ok();
             }
             catch (KeyNotFoundException ex)
@@ -64,11 +63,11 @@ namespace API.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(string id)
+        public async Task<ActionResult> Delete(ClassId id,CancellationToken cancellationToken)
         {
             try
             {
-                await _classRepository.DeleteAsync(id);
+                await _classRepository.Delete(id, cancellationToken);
                 return Ok();
             }
             catch (KeyNotFoundException ex)
@@ -77,4 +76,4 @@ namespace API.Controllers
             }
         }
     }
-}
+}*/

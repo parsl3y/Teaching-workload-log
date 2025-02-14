@@ -50,6 +50,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            },
             "Swashbuckle.AspNetCore.Swagger": {
               "target": "Package",
               "version": "[7.2.0, )"
@@ -128,6 +132,28 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[11.11.0, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.4.1, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "Optional": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -278,6 +304,10 @@
             "MongoDB.Driver.Core": {
               "target": "Package",
               "version": "[2.30.0, )"
+            },
+            "MongoDB.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.2.2, )"
             }
           },
           "imports": [

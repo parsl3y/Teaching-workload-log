@@ -24,6 +24,10 @@ public static  class ConfigurePersistence
         services.AddScoped<ClassRepository>();
         services.AddScoped<IClassRepository>(provider => provider.GetService<ClassRepository>());
         services.AddScoped<IClassQuery>(provider => provider.GetService<ClassRepository>());
+
+        services.AddScoped<UserRepository>();
+        services.AddScoped<IUserRepository>(provider => provider.GetService<UserRepository>());
+        services.AddScoped<IUserQuery>(provider => provider.GetService<UserRepository>());
     }
     
     

@@ -2,50 +2,51 @@ using Application.Common.Interfaces.Queries;
 using Application.Common.Interfaces.Repositories;
 using Domain.Entity;
 using MongoDB.Driver;
+using Optional;
 
 namespace Infrastructure.Persistence.Repositories;
 
 public class ClassRepository : IClassRepository, IClassQuery
 {
-    private readonly IMongoCollection<Classes> _classes;
+    private readonly IMongoCollection<Class> _classes;
 
     public ClassRepository(MongoDbService mongoDbService)
     {
-        _classes = mongoDbService.Database.GetCollection<Classes>("classes");
+        _classes = mongoDbService.Database.GetCollection<Class>("classes");
     }
 
-    public async Task<IEnumerable<Classes>> GetAllAsync()
+    public async Task<IEnumerable<Class>> GetAll(CancellationToken cancellationToken)
     {
-        return await _classes.Find(FilterDefinition<Classes>.Empty).ToListAsync();
+        return await _classes.Find(classes => true).ToListAsync(cancellationToken);
+    }
+    
+    public async Task<Option<Class>> GetById(ClassId id,CancellationToken cancellationToken)
+    {
+        var entity = await _classes.Find(classes => classes.Id == id).FirstOrDefaultAsync(cancellationToken);
+        return entity == null ? Option.None<Class>() : Option.Some(entity);
+    }
+    
+    public async Task<Class> Create(Class @class, CancellationToken cancellationToken)
+    {
+        await _classes.InsertOneAsync(@class, cancellationToken: cancellationToken);
+        return @class;
     }
 
-    public async Task<Classes> GetByIdAsync(string id)
+    public async Task<Option<Class>> GetByClassName(string className, CancellationToken cancellationToken)
     {
-        var filter = Builders<Classes>.Filter.Eq(x => x.Id, id);
-        var classes = await _classes.Find(filter).FirstOrDefaultAsync();
-
-        if (classes == null)
-        {
-            throw new KeyNotFoundException($"Class with id {id} not found.");
-        }
-
-        return classes;
+        var entity = await _classes.Find(c => c.ClassName == className).FirstOrDefaultAsync(cancellationToken);
+        return entity == null ? Option.None<Class>() : Option.Some(entity);
     }
-
-    public async Task CreateAsync(Classes classes)
+    
+    public async Task<Class> Update(Class @class, CancellationToken cancellationToken)
     {
-        await _classes.InsertOneAsync(classes);
+        await _classes.ReplaceOneAsync(x => x.Id == @class.Id, @class, cancellationToken: cancellationToken );
+        return @class;
     }
-
-    public async Task UpdateAsync(string id, Classes classes)
+    
+    public async Task<Class> Delete(Class @class, CancellationToken cancellationToken)
     {
-        var filter = Builders<Classes>.Filter.Eq(x => x.Id, id);
-        await _classes.ReplaceOneAsync(filter, classes);
-    }
-
-    public async Task DeleteAsync(string id)
-    {
-        var filter = Builders<Classes>.Filter.Eq(x => x.Id, id);
-        await _classes.DeleteOneAsync(filter);
+        await _classes.DeleteOneAsync(x => x.Id == @class.Id, cancellationToken);
+        return @class;
     }
 }
