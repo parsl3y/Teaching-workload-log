@@ -14,7 +14,7 @@ public class ClassAlreadExistsException(ClassId id): ClassException(id, $"Lesson
 public class UserClassNotFoundException : ClassException
 {
     public UserClassNotFoundException(UserId userId)
-        :base(ClassId.Empty(), $"Country with id {userId} was not found.") { }
+        :base(ClassId.Empty(), $"Teacher with id {userId} was not found.") { }
 }
 public class ClassUknownException(ClassId id, Exception innerException) 
     :ClassException(id, $"Uknown exception for the lesson under id:{id}", innerException);

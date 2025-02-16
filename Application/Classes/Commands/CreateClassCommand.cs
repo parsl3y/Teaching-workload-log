@@ -22,7 +22,6 @@ public class CreateClassCommandHandler : IRequestHandler<CreateClassCommand, Res
     private readonly IClassQuery _classQuery;
     private readonly IUserQuery _userQuery;
 
-
     public CreateClassCommandHandler(
         IClassRepository classRepository,
         IClassQuery classQuery, IUserQuery userQuery)
@@ -36,47 +35,54 @@ public class CreateClassCommandHandler : IRequestHandler<CreateClassCommand, Res
         CreateClassCommand request,
         CancellationToken cancellationToken)
     {
-        var teacherId = new UserId(request.TeacherId);
-
-        var teacher = await _userQuery.GetById(teacherId, cancellationToken);
-        return await teacher.Match(
-            async t =>
+        if (request.TeacherId.HasValue)
+        {
+            var teacherId = new UserId(request.TeacherId.Value);
+            var teacher = await _userQuery.GetById(teacherId, cancellationToken);
+            
+            return await teacher.Match(
+                async t =>
                 {
                     var existingClass =
                         await _classQuery.GetByClassName(request.ClassName, cancellationToken);
                     return await existingClass.Match(
-                        c => Task.FromResult<Result<Class, ClassException>>(
-                            new ClassAlreadExistsException(c.Id),
-
-                            async () => await CreateEntity(request.ClassName, request.TotalClassNumber,
-                                request.CLassNumberToday, t.Id, request.Date, cancellationToken)
-                        ));
+                        c => Task.FromResult<Result<Class, ClassException>>(new ClassAlreadExistsException(c.Id)),
+                        async () => await CreateEntity(request.ClassName, request.TotalClassNumber,
+                            request.CLassNumberToday, t.Id, request.Date, cancellationToken)
+                    );
                 },
-
                 () => Task.FromResult<Result<Class, ClassException>>(
-            new UserClassNotFoundException(teacherId)));
+                    new UserClassNotFoundException(teacherId))
+            );
+        }
+
+        return await CreateEntity(request.ClassName, request.TotalClassNumber,
+            request.CLassNumberToday, null, request.Date, cancellationToken);
     }
 
-
-private async Task<Result<Class, ClassException>> CreateEntity(
-            string className,
-            int totalClassNumber,
-            int classNumberToday,
-            UserId? userId,
-            DateTime date,
-            CancellationToken cancellationToken)
+    private async Task<Result<Class, ClassException>> CreateEntity(
+        string className,
+        int totalClassNumber,
+        int classNumberToday,
+        UserId? userId,
+        DateTime date,
+        CancellationToken cancellationToken)
     {
-            try
-            {
-                var entity = Class.New(ClassId.New(), className, totalClassNumber, classNumberToday, userId, date);
+        try
+        {
+            Console.WriteLine($"Creating class: {className}, Total: {totalClassNumber}, Today: {classNumberToday}, Teacher: {userId?.Value}, Date: {date}");
 
-                return await _classRepository.Create(entity, cancellationToken);
-            }
-            catch (Exception e)
-            {
-                return new ClassUknownException(ClassId.Empty(), e);
-            }
+            var entity = Class.New(ClassId.New(), className, totalClassNumber, classNumberToday, userId, date);
+
+            Console.WriteLine($"Created class with ID: {entity.Id}");
+
+            return await _classRepository.Create(entity, cancellationToken);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Error creating class: {e.Message}");
+            return new ClassUknownException(ClassId.Empty(), e);
+        }
     }
-            
-    }
+
 }

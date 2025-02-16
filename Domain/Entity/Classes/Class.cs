@@ -17,7 +17,7 @@ public class Class
     [BsonElement("class_number_today"), BsonRepresentation(BsonType.Int32)]
     public int ClassNumberToday { get; set; }
     
-    [BsonElement("teacher_id"), BsonRepresentation(BsonType.ObjectId)]
+    [BsonElement("teacher_id"), BsonIgnoreIfNull]
     public UserId? TeacherId { get; set; }
     
     [BsonElement("class_date")]

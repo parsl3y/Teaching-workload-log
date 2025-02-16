@@ -1,3 +1,4 @@
+using Application.Common.Serializer;
 using Application.Common.Serrealizer;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;

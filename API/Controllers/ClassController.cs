@@ -1,9 +1,9 @@
-/*using Domain.Entity;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using API.DTOs;
+using API.Errors;
+using Application.Classes.Commands;
 using Application.Common.Interfaces.Queries;
-using Application.Common.Interfaces.Repositories;
+using MediatR;
 
 namespace API.Controllers
 {
@@ -11,69 +11,42 @@ namespace API.Controllers
     [ApiController]
     public class ClassController : ControllerBase
     {
-        private readonly IClassRepository _classRepository;
         private readonly IClassQuery _classQuery;
-        
-        public ClassController(IClassRepository classRepository, IClassQuery classQuery)
+        private readonly ISender _sender;
+
+        public ClassController(ISender sender, IClassQuery classQuery)
         {
-            _classRepository = classRepository;
             _classQuery = classQuery;
+            _sender = sender;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Class>>> GetAll(CancellationToken cancellationToken)
+        [HttpGet("ClassList")]
+        public async Task<ActionResult<IReadOnlyList<FullClassDto>>> GetAll(CancellationToken cancellationToken)
         {
-            var classes = await _classQuery.GetAll(cancellationToken);
-            return Ok(classes);
+            var entities = await _classQuery.GetAll(cancellationToken);
+            return entities.Select(FullClassDto.FromDomainModel).ToList();
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Class>> GetById(ClassId id,CancellationToken cancellationToken)
+        [HttpPost("ClassCreate")]
+        public async Task<ActionResult<CreateClassDto>> Create([FromBody] CreateClassDto request,
+            CancellationToken cancellationToken)
         {
-            try
+            var input = new CreateClassCommand
             {
-                var classes = await _classQuery.GetById(id,cancellationToken);
-                return Ok(classes);
-            }
-            catch (KeyNotFoundException ex)
-            {
-                return NotFound(ex.Message);
-            }
+                
+                ClassName = request.ClassName,
+                CLassNumberToday = request.ClassNumberToday,
+                TotalClassNumber = request.TotalClassNumber,
+                TeacherId = request.TeacherId,
+                Date = request.ClassDate,
+            
+            };
+            
+            var result = await _sender.Send(input, cancellationToken);
+            return result.Match<ActionResult<CreateClassDto>>(
+                c => CreateClassDto.FromDomainModel(c),
+                e => e.ToObjectResult());
         }
-    
-        [HttpPost]
-        public async Task<ActionResult<Class>> Post(Class @class, CancellationToken cancellationToken)
-        {
-            await _classRepository.Create(@class, cancellationToken);
-            return CreatedAtAction(nameof(GetById), new { id = @class.Id }, @class);
-        }
-
-        [HttpPut("{id}")]
-        public async Task<ActionResult> Update([FromRoute] ClassId id, Class @class)
-        {
-            try
-            {
-                await _classRepository.Update(id, @class);
-                return Ok();
-            }
-            catch (KeyNotFoundException ex)
-            {
-                return NotFound(ex.Message);
-            }
-        }
-
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(ClassId id,CancellationToken cancellationToken)
-        {
-            try
-            {
-                await _classRepository.Delete(id, cancellationToken);
-                return Ok();
-            }
-            catch (KeyNotFoundException ex)
-            {
-                return NotFound(ex.Message);
-            }
-        }
+        
     }
-}*/
+}

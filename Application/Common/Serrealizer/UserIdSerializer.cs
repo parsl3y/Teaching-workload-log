@@ -2,9 +2,9 @@ using Domain.Entity;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
 
-namespace Application.Common.Serrealizer;
+namespace Application.Common.Serializer;
 
-public class UserIdSerializer: SerializerBase<UserId>
+public class UserIdSerializer : SerializerBase<UserId>
 {
     public override UserId Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
     {
