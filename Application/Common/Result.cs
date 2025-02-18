@@ -29,4 +29,8 @@ public readonly struct Result<TValue, TError>
         Func<TValue, TResult> success,
         Func<TError, TResult> failure) =>
         IsSuccess ? success(_value!) : failure(_error!);
+    
+    public static Result<TValue, TError> Success(TValue value) => new(value);
+
 }
+

@@ -16,5 +16,14 @@ public class UserClassNotFoundException : ClassException
     public UserClassNotFoundException(UserId userId)
         :base(ClassId.Empty(), $"Teacher with id {userId} was not found.") { }
 }
+
+public class ClassLimitExceededException : ClassException
+{
+    public ClassLimitExceededException(string className, int maxClasses)
+        : base(ClassId.Empty(), $"Cannot create class '{className}'. Maximum allowed classes: {maxClasses}.")
+    { }
+}
+
+
 public class ClassUknownException(ClassId id, Exception innerException) 
     :ClassException(id, $"Uknown exception for the lesson under id:{id}", innerException);

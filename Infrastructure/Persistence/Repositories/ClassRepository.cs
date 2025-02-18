@@ -32,11 +32,12 @@ public class ClassRepository : IClassRepository, IClassQuery
         return @class;
     }
 
-    public async Task<Option<Class>> GetByClassName(string className, CancellationToken cancellationToken)
+    public async Task<Option<IEnumerable<Class>>> GetByClassName(string className, CancellationToken cancellationToken)
     {
-        var entity = await _classes.Find(c => c.ClassName == className).FirstOrDefaultAsync(cancellationToken);
-        return entity == null ? Option.None<Class>() : Option.Some(entity);
+        var entities = await _classes.Find(c => c.ClassName == className).ToListAsync(cancellationToken);
+        return entities.Any() ? Option.Some<IEnumerable<Class>>(entities) : Option.None<IEnumerable<Class>>();
     }
+
     
     public async Task<Class> Update(Class @class, CancellationToken cancellationToken)
     {
@@ -49,4 +50,14 @@ public class ClassRepository : IClassRepository, IClassQuery
         await _classes.DeleteOneAsync(x => x.Id == @class.Id, cancellationToken);
         return @class;
     }
+    
+    public async Task<Option<Class>> GetByClassNameAndNumber(string className, int classNumberToday, CancellationToken cancellationToken)
+    {
+        var entity = await _classes
+            .Find(c => c.ClassName == className && c.ClassNumberToday == classNumberToday)
+            .FirstOrDefaultAsync(cancellationToken);
+
+        return entity == null ? Option.None<Class>() : Option.Some(entity);
+    }
+
 }

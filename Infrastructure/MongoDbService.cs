@@ -1,5 +1,4 @@
-using Application.Common.Serializer;
-using Application.Common.Serrealizer;
+using Application.Common.Serializer; // замість Application.Common.Serrealizer
 using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
 using MongoDB.Bson.Serialization;
@@ -29,8 +28,8 @@ namespace Infrastructure
 
         private void RegisterSerializers()
         {
-            BsonSerializer.RegisterSerializer(new ClassIdSerializer());
-            BsonSerializer.RegisterSerializer(new UserIdSerializer());
+            BsonSerializer.RegisterSerializer(new GuidBasedSerializer<ClassId>());
+            BsonSerializer.RegisterSerializer(new GuidBasedSerializer<UserId>());
         }
     }
 }

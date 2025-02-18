@@ -15,6 +15,7 @@ public static class ClassErrorHandler
                 ClassAlreadExistsException => StatusCodes.Status409Conflict,
                 ClassUknownException => StatusCodes.Status500InternalServerError,
                 UserClassNotFoundException => StatusCodes.Status404NotFound,
+                ClassLimitExceededException => StatusCodes.Status422UnprocessableEntity,
                 _ => throw new NotImplementedException()
             }
         };
