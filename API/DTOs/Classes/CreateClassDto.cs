@@ -7,6 +7,7 @@ public record CreateClassDto(
     string ClassName,
     int TotalClassNumber,
     Guid? TeacherId,
+    int ClassNumberToday,
     DateTime ClassDate)
 {
     public static CreateClassDto FromDomainModel(Class classes)
@@ -15,6 +16,7 @@ public record CreateClassDto(
             classes.ClassName, 
             classes.TotalClassNumber,
             classes.TeacherId?.Value, 
+            classes.ClassNumberToday,
             classes.ClassDate
         );
 }
