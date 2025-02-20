@@ -10,9 +10,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c2cf34d-4235-40b3-84a8-c9e01776d502" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Application/Common/Serrealizer/GuidBasedSerializer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API/Controllers/TeacherTabController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API/DTOs/TeacherTabs/CreateTeacherTabDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API/DTOs/TeacherTabs/FullTeacherTabDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API/DTOs/TeacherTabs/TeacherTabIdDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API/Modules/Errors/TeacherTabErrorHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Common/Interfaces/Queries/ITeacherTabQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Common/Interfaces/Repositories/ITeacherTabRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/SaveToExcel/SaveTeacherTabToExcelCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/TeacherTabs/Commands/CreateTeacherTabCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/TeacherTabs/Exceptions/TeacherTabException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Entity/TeacherTab/TeacherTab.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Entity/TeacherTab/TeacherTabId.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Repositories/TeacherTabRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Teaching workload log/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Teaching workload log/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Teaching workload log/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Teaching workload log/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Teaching workload log/.idea/dataSources/9750779d-7ace-4a31-b0ab-4df946009bc7/storage_v2/_src_/schema/MyBD.Ds8kAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Teaching workload log/.idea/dataSources/9750779d-7ace-4a31-b0ab-4df946009bc7/storage_v2/_src_/schema/MyDb.as8kAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Teaching workload log/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Teaching workload log/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/Modules/Errors/ClassErrorHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Modules/Errors/ClassErrorHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/DTOs/Classes/CreateClassDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/DTOs/Classes/CreateClassDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/bin/Debug/net8.0/API.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net8.0/API.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/bin/Debug/net8.0/API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net8.0/API.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/bin/Debug/net8.0/API.exe" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net8.0/API.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/bin/Debug/net8.0/API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net8.0/API.pdb" afterDir="false" />
@@ -22,28 +40,36 @@
       <change beforePath="$PROJECT_DIR$/API/bin/Debug/net8.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net8.0/Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/bin/Debug/net8.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net8.0/Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/bin/Debug/net8.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net8.0/Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/API.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/API.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/API.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/API.csproj.nuget.g.targets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/API.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/API.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/API.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/API.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/API.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/API.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/API.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/API.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/API.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/API.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/API.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/API.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/API.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/API.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/API.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/API.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/apphost.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/ref/API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/ref/API.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/refint/API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/refint/API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Application.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Classes/Commands/CreateClassCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Classes/Commands/CreateClassCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Classes/Exceptions/ClassException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Classes/Exceptions/ClassException.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Common/Interfaces/Queries/IClassQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Common/Interfaces/Queries/IClassQuery.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Common/Interfaces/Repositories/IClassRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Common/Interfaces/Repositories/IClassRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Common/Result.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Common/Result.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Common/Serrealizer/ClassIdSerializer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Common/Serrealizer/UserIdSerializer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Application.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Application.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Application.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Application/bin/Debug/net8.0/Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Application.csproj.nuget.g.targets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.dll" afterDir="false" />
@@ -51,31 +77,49 @@
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/Application.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/ref/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/ref/Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/obj/Debug/net8.0/refint/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/Debug/net8.0/refint/Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Application/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entity/Documentation.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/net8.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/net8.0/Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/bin/Debug/net8.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/bin/Debug/net8.0/Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/Domain.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/ref/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/ref/Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/refint/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/Debug/net8.0/refint/Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/MongoDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/MongoDbService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Persistence/Repositories/ClassRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Persistence/Repositories/ClassRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Persistence/ConfigurePersistence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Persistence/ConfigurePersistence.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net8.0/Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net8.0/Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net8.0/Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net8.0/Application.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net8.0/Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net8.0/Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net8.0/Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net8.0/Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net8.0/Infrastructure.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net8.0/Infrastructure.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net8.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net8.0/Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net8.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net8.0/Infrastructure.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/Infrastructure.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/Infrastructure.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/Infrastructure.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/Infrastructure.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/Infrastructure.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/Infrastructure.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/Infrastructure.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/Infrastructure.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/Infrastructure.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/Infrastructure.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/Infrastructure.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/Infrastructure.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/Infrastructure.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/ref/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/ref/Infrastructure.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/refint/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net8.0/refint/Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Infrastructure.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Infrastructure.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Infrastructure.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Infrastructure.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,11 +153,15 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/39988e239fb94b73b8bdb00ab8b87d1f82400/a3/2f47a92f/BsonSerializationOptionsAttribute.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2e49d132ea68ff47071c64476ae29138fa965dc555ef7c3f4991586431de241/Task.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2e91d1d93c53575af4738c655c171d42deb53788b36f3c73fb7991a1aa9d3/IBsonSerializer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3a41386903e3b78108eab1e7fce0af989aab78fb1c3dbc6bf51ba8953882/IMongoCollection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bd1d5c50194fea68ff3559c160230b0ab50f5acf4ce3061bffd6d62958e2182/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/API/DTOs/Classes/FullClassDto.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/API/DTOs/Classes/IdClassDto.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="SWEA" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 3
@@ -212,6 +260,8 @@
       <workItem from="1739725564731" duration="3677000" />
       <workItem from="1739734148026" duration="2566000" />
       <workItem from="1739827134962" duration="3359000" />
+      <workItem from="1739966840555" duration="16698000" />
+      <workItem from="1740047241125" duration="6217000" />
     </task>
     <servers />
   </component>

@@ -1,5 +1,7 @@
+using Application.Commands;
 using Application.Common.Interfaces.Queries;
 using Application.Common.Interfaces.Repositories;
+using Domain.Entity.TeacherTab;
 using Infrastructure.Persistence.Repositories;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,6 +30,12 @@ public static  class ConfigurePersistence
         services.AddScoped<UserRepository>();
         services.AddScoped<IUserRepository>(provider => provider.GetService<UserRepository>());
         services.AddScoped<IUserQuery>(provider => provider.GetService<UserRepository>());
+
+        services.AddScoped<TeacherTabRepository>();
+        services.AddScoped<ITeacherTabRepository>(provider => provider.GetService<TeacherTabRepository>());
+        services.AddScoped<ITeacherTabQuery>(provider => provider.GetService<TeacherTabRepository>());
+
+        services.AddTransient<SaveTeacherTabToExcelCommand>();
     }
     
     

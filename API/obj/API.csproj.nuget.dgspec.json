@@ -133,6 +133,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.104.2, )"
+            },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.6.0, )"
+            },
             "FluentValidation.DependencyInjectionExtensions": {
               "target": "Package",
               "version": "[11.11.0, )"
@@ -140,6 +148,10 @@
             "MediatR": {
               "target": "Package",
               "version": "[12.4.1, )"
+            },
+            "Microsoft.AspNetCore.Hosting": {
+              "target": "Package",
+              "version": "[2.3.0, )"
             },
             "Microsoft.AspNetCore.Http": {
               "target": "Package",

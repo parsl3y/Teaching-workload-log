@@ -95,7 +95,7 @@ public class CreateClassCommandHandler : IRequestHandler<CreateClassCommand, Res
     {
         try
         {
-            var entity = Class.New(ClassId.New(), className, totalClassNumber, classNumberToday, userId, date);
+            var entity = Class.New(ClassId.New(), className, totalClassNumber, classNumberToday, userId, DateTime.UtcNow);
             
             return await _classRepository.Create(entity, cancellationToken);
         }

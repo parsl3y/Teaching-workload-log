@@ -15,5 +15,19 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
+    <data-source name="@localhost [2]" uuid="0adcce2c-7f43-4133-ada2-420b933c909c">
+      <database-info product="Mongo DB" version="8.0.4" jdbc-version="4.2" driver-name="MongoDB JDBC Driver" driver-version="1.20" dbms="MONGO" exact-version="8.0.4" exact-driver-version="1.20" />
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <secret-storage>master_key</secret-storage>
+      <auth-provider>no-auth</auth-provider>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="schema">
+            <name qname="@" />
+            <name qname="MyDb" />
+          </node>
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
   </component>
 </project>

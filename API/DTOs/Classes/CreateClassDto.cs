@@ -1,7 +1,6 @@
 using Domain.Entity;
 
 namespace API.DTOs;
-
 public record CreateClassDto(
     Guid? Id,
     string ClassName,

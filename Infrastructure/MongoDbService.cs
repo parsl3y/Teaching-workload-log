@@ -4,6 +4,7 @@ using MongoDB.Driver;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
 using Domain.Entity;
+using Domain.Entity.TeacherTab;
 
 namespace Infrastructure
 {
@@ -30,6 +31,7 @@ namespace Infrastructure
         {
             BsonSerializer.RegisterSerializer(new GuidBasedSerializer<ClassId>());
             BsonSerializer.RegisterSerializer(new GuidBasedSerializer<UserId>());
+            BsonSerializer.RegisterSerializer(new GuidBasedSerializer<TeacherTabId>());
         }
     }
 }
